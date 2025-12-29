@@ -42,7 +42,7 @@ async function loginController(req, res) {
     email,
   });
   if(!user){
-    return res.status(400).json({message:"Invailid email"})
+    return res.status(400).json({message:"Invalid email"})
   }
   const isPasswordValid = await bcryptjs.compare(password, user.password);
 
@@ -72,7 +72,7 @@ async function GetUserInfo(req,res) {
        },
      });
    } catch (error) {
-     console.log( "note reciveing user info", error);
+     console.log( "note receiving user info", error);
      
    }
 
